@@ -77,10 +77,6 @@ func writeFile(Parent *Item, path string) {
 			Summary += "  "
 		}
 		Summary += "* [" + Parent.Name + "](" + path + ")\n"
-	} else {
-		fmt.Println("inin")
-		fmt.Println(path)
-		fmt.Println()
 	}
 
 	if childHasRequest(Parent) {

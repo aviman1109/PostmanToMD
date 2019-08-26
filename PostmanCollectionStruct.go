@@ -40,7 +40,7 @@ type Response struct {
 	Code            int       `json:"code"`
 	Method          string    `json:"method"`
 	Header          []*Header `json:"header"`
-	Body            Body      `json:"body"`
+	Body            string    `json:"body"`
 	URL             URL       `json:"url"`
 	Description     string    `json:"description"`
 }

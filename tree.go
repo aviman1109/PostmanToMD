@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-var re = regexp.MustCompile(`(\()([a-zA-Z0-9])(\))`)
+var re = regexp.MustCompile(`(\()([a-zA-Z0-9-_ ]*)(\))`)
 
 func root(root *Item) []*Item {
 	format := translateText(root.Info.Name)
