@@ -127,7 +127,7 @@ func (Item *Item) writing(fp *os.File) {
 	fmt.Fprint(w, "{% api \""+Item.Name+"\", ")
 	fmt.Fprint(w, "method=\""+Item.Request.Method+"\",")
 	fmt.Fprint(w, "url=\""+Item.Request.URL.Raw+"\" %}\n")
-	fmt.Fprintln(w, Item.Description)
+	fmt.Fprintln(w, Item.Request.Description)
 	fmt.Fprintln(w, "## Request")
 	fmt.Fprintln(w, "")
 	fmt.Fprintln(w, "```json")
@@ -154,6 +154,8 @@ func (Item *Item) writing(fp *os.File) {
 func (Item *Item) writeTitle(fp *os.File) {
 	w := bufio.NewWriter(fp)
 	fmt.Fprintf(w, "# %s\n\n", Item.Name)
+	fmt.Fprintln(w, Item.Description)
+	fmt.Fprintln(w, "")
 	w.Flush() // Don't forget to flush!
 }
 
